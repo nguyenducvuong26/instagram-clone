@@ -1,0 +1,29 @@
+.form {
+    width: 100%;
+    display: flex;
+    border-top: 1px solid rgba(var(--ce3, 239, 239, 239), 1);
+}
+.form input {
+    width: 100%;
+}
+
+.form input,
+.form button {
+    outline: none;
+    border: none;
+    padding: 12px 16px;
+}
+
+.button {
+    color: #0095f6;
+    background-color: transparent;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.invalid {
+    opacity: 0.3;
+    cursor: default;
+}

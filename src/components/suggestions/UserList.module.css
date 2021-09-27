@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header h2 {
+    color: #8e8e8e;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.header a {
+    text-decoration: none;
+    color: #262626;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.list {
+    width: 100%;
+    padding: 8px 0;
+}
+
+.list h2 {
+    font-weight: 600;
+}

@@ -1,0 +1,65 @@
+.container {
+    max-width: 400px;
+    margin: auto;
+}
+
+.header {
+    text-align: center;
+    font-size: 20px;
+}
+
+.form-group {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.form-control {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.form-control > div {
+    width: 80%;
+}
+
+.form-control label {
+    font-size: 16px;
+    width: 20%;
+}
+
+.form-control input {
+    width: 100%;
+    padding: 4px;
+    font-size: 14px;
+}
+
+.form-control.invalid input {
+    border: 2px solid rgb(241, 57, 57);
+}
+
+.form-control p {
+    color: rgb(241, 57, 57);
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.actions button {
+    display: block;
+    padding: 8px 20px;
+    margin: 0 auto;
+    background-color: transparent;
+    border-radius: 20px;
+    margin-top: 8px;
+    background: linear-gradient(to right, #ba71da 0%, #da717b 100%);
+}
+
+.actions button:hover {
+    background: linear-gradient(to left, #ba71da 0%, #da717b 100%);
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    margin: 6px 0;
+}

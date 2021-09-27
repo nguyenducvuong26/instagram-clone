@@ -1,0 +1,43 @@
+.item {
+    display: flex;
+    padding: 8px 0;
+}
+
+.image {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.username {
+    width: 70%;
+}
+
+.username h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #262626;
+    cursor: pointer;
+}
+
+.username h3:hover {
+    text-decoration: underline;
+}
+
+.action button {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #0095f6;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 8px;
+    cursor: pointer;
+}

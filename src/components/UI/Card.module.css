@@ -1,0 +1,7 @@
+.card {
+    width: 100%;
+    padding: 16px 0;
+    margin-bottom: 24px;
+    border-radius: 3px;
+    border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+}

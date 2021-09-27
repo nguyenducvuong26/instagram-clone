@@ -1,0 +1,36 @@
+.comment {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.username {
+    font-weight: bold;
+    margin-right: 6px;
+    color: rgba(var(--f75, 38, 38, 38), 1);
+}
+
+.comment-setting {
+    position: relative;
+    cursor: pointer;
+}
+
+.comment-setting-list {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    z-index: 2;
+    list-style: none;
+    background-color: #fff;
+    padding: 8px 16px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px 1px rgba(var(--jb7, 0, 0, 0), 0.0975);
+}
+
+.comment-setting-list li {
+    font-size: 14px;
+}
+
+.comment-setting-list li:hover {
+    background-color: rgba(var(--b3f, 250, 250, 250), 1);
+}

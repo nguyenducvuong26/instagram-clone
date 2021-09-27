@@ -1,0 +1,36 @@
+.container {
+    max-width: 935px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.main-content {
+    max-width: 614px;
+    width: 100%;
+    margin-right: 28px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.sub-content {
+    max-width: 293px;
+    width: 100%;
+    top: 88px;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+}
+
+@media (max-width: 969px) {
+    .main-content {
+        margin: 0;
+        position: unset;
+    }
+
+    .sub-content {
+        display: none;
+    }
+}

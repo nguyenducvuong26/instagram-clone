@@ -1,0 +1,44 @@
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px 16px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.info img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.info span {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(var(--f75, 38, 38, 38), 1);
+    line-height: 100%;
+    margin-left: 12px;
+}
+
+.image {
+    width: 100%;
+}
+
+.image img {
+    width: 100%;
+}
+
+.caption {
+    padding: 6px 16px 0;
+    font-size: 16px;
+}
+
+.caption span:nth-child(1) {
+    font-weight: bold;
+    margin-right: 6px;
+}
