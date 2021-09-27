@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
 import { userActions } from "../../store/user";
 import useHttp from "../../hooks/useHttp";
 import { getUsers } from "../../lib/api";
