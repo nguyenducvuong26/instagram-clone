@@ -1,7 +1,14 @@
-/* .container {
+.container {
+    margin-top: 50px;
     width: 935px;
-    height: 100%;
-    background: linear-gradient(
+    text-align: center;
+}
+
+.container h1 {
+    color: transparent;
+    font-size: 5rem;
+    line-height: 5rem;
+    background-image: linear-gradient(
         -45deg,
         #71b7e6,
         #69a6ce,
@@ -11,17 +18,29 @@
         #69a6ce,
         #9b59b6
     );
-    animation: animateTextBackground 10s ease-in-out infinite;
-    text-shadow: 1px 1px 2px transparentize(#fff, 0.75);
-    background-size: 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    display: inline-block;
 }
 
-.container h1 {
-    font-size: 18vh;
-    font-weight: bold;
-    position: relative;
-    margin: 100px;
-    padding: 0;
+.container h2 {
+    color: transparent;
+    font-size: 2rem;
+    line-height: 2rem;
+    background-image: linear-gradient(
+        -45deg,
+        #71b7e6,
+        #69a6ce,
+        #b98acc,
+        #ee8176,
+        #b98acc,
+        #69a6ce,
+        #9b59b6
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    display: inline-block;
+    margin-left: 10px;
 }
 
 @keyframes animateTextBackground {
@@ -44,20 +63,4 @@
     100% {
         background-position: 0 0;
     }
-} */
-
-.container {
-    margin-top: 50px;
-    width: 935px;
-    text-align: center;
-}
-
-.container h1 {
-    font-size: 6rem;
-    line-height: 6rem;
-}
-
-.container h2 {
-    font-size: 2rem;
-    line-height: 2rem;
 }
