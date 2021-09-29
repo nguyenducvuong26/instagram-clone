@@ -48,7 +48,11 @@ const PostItem = (props) => {
                     </div>
                 </div>
                 <div className={classes.image}>
-                    <img alt="user-post" src={props.imageUrl} />
+                    <img
+                        alt={`${props.username}-post`}
+                        src={props.imageUrl}
+                        loading="lazy"
+                    />
                 </div>
                 <div className={classes.caption}>
                     <span>{props.username}</span>

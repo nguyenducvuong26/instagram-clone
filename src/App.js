@@ -1,17 +1,19 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, Suspense } from "react";
 import { useDispatch } from "react-redux";
 import { AuthContext } from "./contexts/auth-context";
 import { userActions } from "./store/user";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import MainNavigation from "./components/layout/MainNavigation";
-import LoginPage from "./pages/LoginPage";
-import HomePage from "./pages/HomePage";
-import InboxPage from "./pages/InboxPage";
-import ExplorePage from "./pages/ExplorePage";
-import ProfilePage from "./pages/ProfilePage";
-import DetailPage from "./pages/DetailPage";
-import SettingPage from "./pages/SettingPage";
+import LoadingSpinner from "./components/UI/LoadingSpinner";
+
+const LoginPage = React.lazy(() => import("./pages/LoginPage"));
+const HomePage = React.lazy(() => import("./pages/HomePage"));
+const InboxPage = React.lazy(() => import("./pages/InboxPage"));
+const ExplorePage = React.lazy(() => import("./pages/ExplorePage"));
+const ProfilePage = React.lazy(() => import("./pages/ProfilePage"));
+const DetailPage = React.lazy(() => import("./pages/DetailPage"));
+const SettingPage = React.lazy(() => import("./pages/SettingPage"));
 
 function App() {
     const { token, isLoggedIn } = useContext(AuthContext);
@@ -63,45 +65,53 @@ function App() {
         <React.Fragment>
             <MainNavigation />
             <Layout>
-                <Switch>
-                    <Route path="/" exact>
-                        {!isLoggedIn && <Redirect to="/login" />}
-                        {isLoggedIn && <HomePage />}
-                    </Route>
-                    {!isLoggedIn && (
-                        <Route path="/login">
-                            <LoginPage />
+                <Suspense
+                    fallback={
+                        <div className="centered">
+                            <LoadingSpinner />
+                        </div>
+                    }
+                >
+                    <Switch>
+                        <Route path="/" exact>
+                            {!isLoggedIn && <Redirect to="/login" />}
+                            {isLoggedIn && <HomePage />}
                         </Route>
-                    )}
-                    {isLoggedIn && (
-                        <Route path="/inbox">
-                            <InboxPage />
+                        {!isLoggedIn && (
+                            <Route path="/login">
+                                <LoginPage />
+                            </Route>
+                        )}
+                        {isLoggedIn && (
+                            <Route path="/inbox">
+                                <InboxPage />
+                            </Route>
+                        )}
+                        {isLoggedIn && (
+                            <Route path="/explore">
+                                <ExplorePage />
+                            </Route>
+                        )}
+                        {isLoggedIn && (
+                            <Route path="/profile" exact>
+                                <ProfilePage />
+                            </Route>
+                        )}
+                        {isLoggedIn && (
+                            <Route path="/profile/edit">
+                                <SettingPage />
+                            </Route>
+                        )}
+                        {isLoggedIn && (
+                            <Route path="/post/:postId">
+                                <DetailPage />
+                            </Route>
+                        )}
+                        <Route path="*">
+                            <Redirect to="/" />
                         </Route>
-                    )}
-                    {isLoggedIn && (
-                        <Route path="/explore">
-                            <ExplorePage />
-                        </Route>
-                    )}
-                    {isLoggedIn && (
-                        <Route path="/profile" exact>
-                            <ProfilePage />
-                        </Route>
-                    )}
-                    {isLoggedIn && (
-                        <Route path="/profile/edit">
-                            <SettingPage />
-                        </Route>
-                    )}
-                    {isLoggedIn && (
-                        <Route path="/post/:postId">
-                            <DetailPage />
-                        </Route>
-                    )}
-                    <Route path="*">
-                        <Redirect to="/" />
-                    </Route>
-                </Switch>
+                    </Switch>
+                </Suspense>
             </Layout>
         </React.Fragment>
     );
