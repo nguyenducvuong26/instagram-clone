@@ -38,7 +38,11 @@ const PostList = () => {
     }
 
     if (!isLoading && error) {
-        return <h2>{error}</h2>;
+        return (
+            <div className="center">
+                <h2>{error}</h2>
+            </div>
+        );
     }
 
     if (!isLoading && !error && posts && posts.length === 0) {
