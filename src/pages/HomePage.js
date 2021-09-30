@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import classes from "./HomePage.module.css";
 import PostList from "../components/posts/PostList";
 import NewPostForm from "../components/posts/NewPostForm";
@@ -26,9 +26,7 @@ function getScrollbarWidth() {
 }
 
 const HomePage = () => {
-    const scrollbarWidth = useMemo(() => {
-        return getScrollbarWidth();
-    }, []);
+    const scrollbarWidth = getScrollbarWidth();
 
     const [padding, setPadding] = useState(
         (window.innerWidth - 935 - scrollbarWidth) / 2
