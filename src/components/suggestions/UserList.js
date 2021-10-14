@@ -14,7 +14,7 @@ const UserList = (props) => {
                 {props.listUser &&
                     props.listUser.length > 0 &&
                     props.listUser.map((user) => {
-                        return <UserItem key={user.userId} user={user} />;
+                        return <UserItem key={user?.userId} user={user} />;
                     })}
                 {props.listUser.length < 0 && <p>No suggestions for you.</p>}
             </ul>
