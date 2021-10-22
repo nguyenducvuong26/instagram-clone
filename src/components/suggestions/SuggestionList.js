@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { userActions } from "../../store/user";
 import useHttp from "../../hooks/useHttp";
 import { getUsers } from "../../lib/api";
@@ -17,7 +17,7 @@ const SuggestionList = () => {
         const randomIndexes = [];
         const randomUsers = [];
         while (randomIndexes.length < 5) {
-            const randomIndex = Math.floor(Math.random() * 20) + 1;
+            const randomIndex = Math.floor(Math.random() * 20);
             if (randomIndexes.indexOf(randomIndex) === -1) {
                 randomIndexes.push(randomIndex);
                 randomUsers.push(DUMMY_SUGGESTIONS[randomIndex]);
@@ -26,7 +26,11 @@ const SuggestionList = () => {
         setListUser(randomUsers);
     }, [getUsersData]);
 
-    return <UserList listUser={listUser} />;
+    return (
+        <React.Fragment>
+            {listUser.length > 0 && <UserList listUser={listUser} />}
+        </React.Fragment>
+    );
 };
 
 export default SuggestionList;

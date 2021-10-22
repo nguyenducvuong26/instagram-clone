@@ -56,14 +56,12 @@ const ProfileForm = () => {
         hasError: usernameHasError,
         inputChangeHandler: usernameChangeHandler,
         inputBlurHandler: usernameBlurHandler,
-        reset: resetUsername,
     } = useInput(validateUsername, users);
 
     const {
         value: avatar,
         isValid: avatarIsValid,
         inputChangeHandler: avatarChangeHandler,
-        reset: resetFileImage,
     } = useInput(validateFileImage);
 
     const usenameClasses = usernameHasError
@@ -100,8 +98,6 @@ const ProfileForm = () => {
         )
             .then((response) => {
                 setIsLoading(false);
-                resetUsername();
-                resetFileImage();
                 if (response.ok) {
                     return response.json();
                 } else {
@@ -134,7 +130,7 @@ const ProfileForm = () => {
                     })
                 );
             })
-            .then((data) => {
+            .then(() => {
                 history.push("/profile");
             })
             .catch((error) => {

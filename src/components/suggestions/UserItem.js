@@ -4,10 +4,10 @@ const UserItem = (props) => {
     return (
         <li className={classes.item}>
             <div className={classes.image}>
-                <img src={props?.user.photoUrl} alt="user-avatar" />
+                <img src={props?.user?.photoUrl} alt="user-avatar" />
             </div>
             <div className={classes.username}>
-                <h3>{props?.user.username}</h3>
+                <h3>{props?.user?.username}</h3>
             </div>
             <div className={classes.action}>
                 <button>Follow</button>

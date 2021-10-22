@@ -49,7 +49,7 @@ function App() {
                             username: responseData.users[0].displayName,
                             photoUrl: responseData.users[0].photoUrl
                                 ? responseData.users[0].photoUrl
-                                : "https://scontent.fhan5-3.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-5&_nc_sid=7206a8&_nc_ohc=3YCurt1IZskAX8Cznbu&_nc_ht=scontent.fhan5-3.fna&oh=50a9e272c962f81c64b502c784a587bf&oe=616A7778",
+                                : "https://firebasestorage.googleapis.com/v0/b/instagram-clone-12b86.appspot.com/o/images%2FunsetAvatar.png?alt=media&token=28069a16-4eea-47ee-b069-67927cfdb3c6",
                             localId: responseData.users[0].localId,
                             email: responseData.users[0].email,
                         })

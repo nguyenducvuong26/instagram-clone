@@ -45,7 +45,6 @@ const LoginForm = () => {
         hasError: emailHasError,
         inputChangeHandler: emailChangeHandler,
         inputBlurHandler: emailBlurHandler,
-        reset: resetEmail,
     } = useInput(validateEmail);
 
     const {
@@ -54,7 +53,6 @@ const LoginForm = () => {
         hasError: passwordHasError,
         inputChangeHandler: passwordChangeHandler,
         inputBlurHandler: passwordBlurHandler,
-        reset: resetPassword,
     } = useInput(validatePassword);
 
     const emailClasses = emailHasError
@@ -102,8 +100,6 @@ const LoginForm = () => {
         })
             .then((response) => {
                 setIsLoading(false);
-                resetEmail();
-                resetPassword();
                 if (response.ok) {
                     return response.json();
                 } else {
@@ -122,7 +118,7 @@ const LoginForm = () => {
                         email: enteredEmail,
                         password: enteredPassword,
                         photoUrl:
-                            "https://scontent.fhan5-3.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-5&_nc_sid=7206a8&_nc_ohc=3YCurt1IZskAX8Cznbu&_nc_ht=scontent.fhan5-3.fna&oh=50a9e272c962f81c64b502c784a587bf&oe=616A7778",
+                            "https://firebasestorage.googleapis.com/v0/b/instagram-clone-12b86.appspot.com/o/images%2FunsetAvatar.png?alt=media&token=28069a16-4eea-47ee-b069-67927cfdb3c6",
                     });
                 }
                 return data;
